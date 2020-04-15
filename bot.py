@@ -20,7 +20,6 @@ async def on_message(message):
     
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         await message.channel.send("Hey " + message.author.name + "!")
-    if
     
     
 client.run(token)
