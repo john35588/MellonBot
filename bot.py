@@ -1,6 +1,6 @@
 import discord
 import urllib.request
-import Dadjokes
+from dadjokes import Dadjoke
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
