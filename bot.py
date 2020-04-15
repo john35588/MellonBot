@@ -1,5 +1,4 @@
 import discord
-from boto.s3.connection import S3Connection
 impoet os
 
 token = os.environ.get('S3_token')
