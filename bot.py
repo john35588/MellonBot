@@ -1,5 +1,5 @@
 import discord
-impoet os
+import os
 
 token = os.environ.get('S3_token')
 
