@@ -13,6 +13,6 @@ async def on_ready():  # method expected by client. This runs once when connecte
 async def on_message(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     await message.add_reaction("🍉")
-    print("Added reaction: 🍉")
+    print(f"Added reaction: 🍉")
 
 client.run(token)  # recall my token was saved!
