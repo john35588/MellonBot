@@ -1,5 +1,4 @@
 import discord
-import os
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 
@@ -13,8 +12,6 @@ async def on_ready():  # method expected by client. This runs once when connecte
 @client.event
 async def on_message(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
-
-    if "john35588" in message.author.name:
-        await message.add_reaction("🍉")
+    await message.add_reaction("🍉")
 
 client.run(token)  # recall my token was saved!
