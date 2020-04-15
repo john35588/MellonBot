@@ -24,9 +24,10 @@ async def on_message(message):
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         await message.channel.send("Hey " + message.author.name + "!")
     
-    if "john35588" in message.author.name:
+    if "!joke" in message.content.lower():
         dadjoke = Dadjoke()
-        print(dadjoke.joke)
+        joke = dadjoke.joke
+        await message.channel.send(joke)
 
         
     
