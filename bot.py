@@ -5,7 +5,6 @@ from dadjokes import Dadjoke
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
 
-print(manage_messages)
 
 @client.event
 async def on_ready():
@@ -32,8 +31,5 @@ async def on_message(message):
         dadjoke = Dadjoke()
         joke = dadjoke.joke
         await message.channel.send(joke)
-
-        
- 
-print(manage_messages)    
+   
 client.run(token)
