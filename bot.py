@@ -11,7 +11,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
-    if "22jhoff" in message.author.name:
+    if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
         await message.add_reaction("🌈")
         print("Response: Added reaction: 🌈")
     else:
