@@ -24,7 +24,7 @@ async def on_message(message):
 @client.event
 async def on_message_delete(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content} Message Deleted, reposting")
-    await message.channel.send(message.author.name + " deleted: "message.content)
+    await message.channel.send(message.author.name + " deleted: " + message.content)
     
     
     
