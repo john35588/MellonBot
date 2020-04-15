@@ -1,4 +1,7 @@
 import discord
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['token'])
+
 #print(discord.__version__)  # check to make sure at least once you're on the right version!
 
 token = process.env.token
