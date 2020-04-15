@@ -30,5 +30,8 @@ async def on_message(message):
         dadjoke = Dadjoke()
         joke = dadjoke.joke
         await message.channel.send(joke)
+    
+    if "MelonManTakeMeByTheHand" in message.author:
+        await message.delete()
    
 client.run(token)
