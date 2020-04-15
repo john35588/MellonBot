@@ -1,5 +1,5 @@
 import discord
-import urllib2
+import urllib.request
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
@@ -24,7 +24,7 @@ async def on_message(message):
         await message.channel.send("Hey " + message.author.name + "!")
     
     if "@MelonBot" in message.content and "john35588" in message.author.name:
-        response = urllib2.urlopen('https://api.yomomma.info/')
+        response = urllib.request.urlopen('https://api.yomomma.info/')
         await message.channel.send("@MelonManTakeMeByTheHand " + response)
         
     
