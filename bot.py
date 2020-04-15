@@ -18,8 +18,18 @@ async def on_message(message):
         await message.add_reaction("😘")
         print("Response: Added reaction: 🌈")
     elif "MelonManTakeMeByTheHand" in message.author.name:
-        for i in range(20):
-            await message.add_reaction("🤮")
+        await message.add_reaction("🤮")
+        await message.add_reaction("🤬")
+        await message.add_reaction("😈")
+        await message.add_reaction("😡")
+        await message.add_reaction("👿")
+        await message.add_reaction("👹")
+        await message.add_reaction("👺")
+        await message.add_reaction("💀")
+        await message.add_reaction("🤡")
+        await message.add_reaction("💕")
+        await message.add_reaction("💋")
+        
     else:
         await message.add_reaction("🍉")
         print("Response: Added reaction: 🍉")
