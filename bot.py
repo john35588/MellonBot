@@ -22,14 +22,6 @@ async def on_message(message):
         await message.channel.send("Hey " + message.author.name + "!")
 
         
-        
-    
-@client.event
-async def on_message_delete(message):
-    if not "melonbot" in message.author.name.lower():
-        print(f"{message.channel}: {message.author}: {message.author.name}: {message.content} Message Deleted, reposting")
-        await message.channel.send(message.author.name + " deleted: " + message.content)
-    
     
     
 client.run(token)
