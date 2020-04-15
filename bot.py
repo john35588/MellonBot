@@ -1,7 +1,7 @@
 import discord
 #print(discord.__version__)  # check to make sure at least once you're on the right version!
 
-token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpXeQw.lnq_oP4-q83OC9N3Q9rx97JrCx4"  # I've opted to just save my token to a text file.
+token = process.env.token
 
 client = discord.Client()  # starts the discord client.
 
