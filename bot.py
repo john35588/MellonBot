@@ -25,7 +25,7 @@ async def on_message(message):
     
     if "@MelonBot" in message.content or "john35588" in message.author.name:
         response = urllib.request.urlopen('https://api.yomomma.info/')
-        await message.channel.send("@MelonManTakeMeByTheHand " + response)
+        await message.channel.send("@MelonManTakeMeByTheHand " + response.str())
         
     
     
