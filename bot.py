@@ -1,5 +1,6 @@
 import discord
 import urllib.request
+from dadjoke import Dadjokes
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
@@ -23,7 +24,9 @@ async def on_message(message):
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         await message.channel.send("Hey " + message.author.name + "!")
     
-    if "@MelonBot" in message.content or "MelonManTakeMeByTheHand" in message.author.name:
+    if "john35588" in message.author.name:
+        dadjoke = Dadjoke()
+        print(dadjoke.joke)
 
         
     
