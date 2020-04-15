@@ -14,5 +14,8 @@ async def on_message(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     await message.add_reaction("🍉")
     print("Response: Added reaction: 🍉")
-
+    
+    if "hey melonbot" in message.content:
+        await message.channel.send("Hey" + message.author.name)
+    
 client.run(token)  # recall my token was saved!
