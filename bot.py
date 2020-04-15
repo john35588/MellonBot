@@ -33,5 +33,11 @@ async def on_message(message):
     
     if "MelonManTakeMeByTheHand" in message.author.name:
         await message.delete()
+        
+@client.event
+async def on_message_delete(message):
+    if "MelonBot" in message.author.name:
+        await message.channel.send(message.content)
+    
    
 client.run(token)
