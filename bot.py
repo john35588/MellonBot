@@ -31,8 +31,8 @@ async def on_message(message):
         joke = dadjoke.joke
         await message.channel.send(joke)
     
-    if "MelonManTakeMeByTheHand" in message.author.name:
-        await message.delete()
+#    if "MelonManTakeMeByTheHand" in message.author.name:
+#        await message.delete()
         
 @client.event
 async def on_message_delete(message):
