@@ -3,7 +3,9 @@ from boto.s3.connection import S3Connection
 
 token = S3Connection(os.environ['S3_token'])
 
-#print(discord.__version__)  # check to make sure at least once you're on the right version!
+print(token)
+
+print(discord.__version__)
 
 client = discord.Client()  # starts the discord client.
 
