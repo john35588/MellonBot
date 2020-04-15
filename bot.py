@@ -4,7 +4,8 @@ from dadjokes import Dadjoke
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
-
+manage = discord.manage_messages
+print(manage)
 
 @client.event
 async def on_ready():
