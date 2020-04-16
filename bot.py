@@ -11,7 +11,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
+    print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}: {message.display.name}")
     if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
         await message.add_reaction("🌈")
         await message.add_reaction("💕")
@@ -19,21 +19,10 @@ async def on_message(message):
         print("Response: Added reaction: 🌈")
     elif "MelonManTakeMeByTheHand" in message.author.name:
         await message.add_reaction("🤮")
-        await message.add_reaction("🤬")
-        await message.add_reaction("😈")
-        await message.add_reaction("😡")
-        await message.add_reaction("👿")
-        await message.add_reaction("👹")
-        await message.add_reaction("👺")
-        await message.add_reaction("💀")
-        await message.add_reaction("🤡")
-        await message.add_reaction("💕")
-        await message.add_reaction("💋")
-        
     else:
         await message.add_reaction("🍉")
         print("Response: Added reaction: 🍉")
-    
+		
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         await message.channel.send("Hey " + message.author.name + "!")
     
@@ -45,10 +34,10 @@ async def on_message(message):
 #    if "MelonManTakeMeByTheHand" in message.author.name:
 #        await message.delete()
         
-@client.event
-async def on_message_delete(message):
-    if "MelonBot" in message.author.name:
-        await message.channel.send(message.content)
+#@client.event
+#async def on_message_delete(message):
+#    if "MelonBot" in message.author.name:
+#        await message.channel.send(message.content)
     
    
 client.run(token)
