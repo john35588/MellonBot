@@ -1,5 +1,6 @@
 import discord
 import urllib.request
+from bs4 import BeautifulSoup
 from dadjokes import Dadjoke
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
@@ -30,7 +31,17 @@ async def on_message(message):
         dadjoke = Dadjoke()
         joke = dadjoke.joke
         await message.channel.send(joke)
-    
+
+	if "!xkcd" in message.content.lower():
+		request = message.content[6:]
+		html = urlopen('https://xkcd.com/' + request + '/')
+		bs = BeautifulSoup(html, 'html.parser')
+		images = bs.find_all('img', {'src':re.compile('.png')})
+		image = images[1]['src']
+		image = image[2:]
+		print(image)
+		await message.channel.send(image)
+		
 #    if "MelonManTakeMeByTheHand" in message.author.name:
 #        await message.delete()
         
