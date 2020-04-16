@@ -41,7 +41,7 @@ async def on_message(message):
         image = images[1]['src']
         image = image[2:]
         print(image)
-        await message.channel.send(image)
+        await message.channel.send("http://" + image)
 		
 #    if "MelonManTakeMeByTheHand" in message.author.name:
 #        await message.delete()
