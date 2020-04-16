@@ -1,7 +1,7 @@
 import discord
+from dadjokes import Dadjoke
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
-from dadjokes import Dadjoke
 import re
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
