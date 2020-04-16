@@ -1,5 +1,3 @@
 discord.py
 dadjokes
 bs4
-urllib.request
-re
