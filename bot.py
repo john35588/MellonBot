@@ -29,7 +29,7 @@ def send(ros, message, text):
     if ros == "react":
         await message.add_reaction(text)
         print("Response: Reaction: " + text)
-        
+
     elif ros == "send":
         await message.channel.send(text)
         print("Response: " + text)
