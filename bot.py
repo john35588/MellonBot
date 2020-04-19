@@ -40,10 +40,10 @@ async def on_message(message):
 	# Toggles reactions
     if "$react" in message.content.lower():
         if read_line(1):
-            replace_line(1, "f")
+            replace_line(1, "f\n")
             print("Reactions Disabled")
         else:
-            replace_line(1, "t")
+            replace_line(1, "t\n")
             print("Reactions Enabled")
     
 	# Message Reactions
