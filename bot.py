@@ -12,9 +12,12 @@ def replace_line(line_num, text):
     out.writelines(lines)
     out.close()
 
+
+
+
 def read_line(line_num):
-	vars = open(vars.txt, 'r').readline([line_num])
-	vars.close()
+	variab = open(vars.txt, 'r').readline([line_num])
+	variab.close()
 	return(vars)
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
