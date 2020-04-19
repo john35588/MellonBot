@@ -29,7 +29,6 @@ async def reply(ros, message, text):
     if ros == "react":
         await message.add_reaction(text)
         print("Response: Reaction: " + text)
-
     elif ros == "send":
         await message.channel.send(text)
         print("Response: " + text)
@@ -65,7 +64,6 @@ async def on_message(message):
         if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
             await reply("react", message, "🌈")
             await reply("react", message, "💕")
-            
         elif "MelonManTakeMeByTheHand" in message.author.name:
             await reply("react", message, "🤮")
         else:
@@ -91,7 +89,8 @@ async def on_message(message):
         image = images[1]['src']
         image = image[2:]
         await reply("send", message, "http://" + image)
-    
+        
+	# Sends link to list of commands
     if "$help" in message.content.lower():
         await reply("send", message, "https://docs.google.com/spreadsheets/d/1zOGoIlvEVDKHbX_6CTbjViChMRyQbHEGv74-gVvNUXM/edit?usp=sharing")
     
