@@ -25,7 +25,7 @@ def read_line(line_num):
     return(react)
 
 # Function to send messages/reactions
-def send(ros, message, text):
+async def send(ros, message, text):
     if ros == "react":
         await message.add_reaction(text)
         print("Response: Reaction: " + text)
