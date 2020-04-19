@@ -47,7 +47,7 @@ async def on_message(message):
             print("Reactions Enabled")
     
 	# Message Reactions
-    if read_line(1) or "Wally810" in message.author.name:
+    if read_line(1):
         if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
             await message.add_reaction("🌈")
             await message.add_reaction("💕")
