@@ -26,11 +26,11 @@ def read_line(line_num):
 
 # Function to send messages/reactions
 def send(ros, text):
-    if ros = "react":
+    if ros == "react":
         await message.add_reaction(text)
         print("Response: Reaction: " + text)
         
-    elif ros = "send":
+    elif ros == "send":
         await message.channel.send(text)
         print("Response: " + text)
         
