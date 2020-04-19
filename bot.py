@@ -91,6 +91,10 @@ async def on_message(message):
         image = images[1]['src']
         image = image[2:]
         await reply("send", message, "http://" + image)
+    
+    if "$help" in message.content.lower():
+        await reply("send", message, "https://docs.google.com/spreadsheets/d/1zOGoIlvEVDKHbX_6CTbjViChMRyQbHEGv74-gVvNUXM/edit?usp=sharing")
+    
 
 	# Deletes MelonMan's messages
 #    if "MelonManTakeMeByTheHand" in message.author.name:
