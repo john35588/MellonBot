@@ -17,6 +17,10 @@ def read_line(line_num):
     text = lines.readlines()
     text = text[line_num]
     lines.close()
+    if text = t:
+        text = True
+    else:
+        text = False
     return(text)
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
