@@ -18,7 +18,7 @@ def read_line(line_num):
     text = lines.readlines()
     text = text[line_num]
     lines.close()
-    if text == t:
+    if text == "t":
         react = True
     else:
         react = False
