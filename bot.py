@@ -12,22 +12,19 @@ def replace_line(line_num, text):
     out.writelines(lines)
     out.close()
 
+# Function to read lines in the vars.txt file
 def read_line(line_num):
     lines = open("vars.txt", "r")
     text = lines.readlines()
     text = text[line_num]
     lines.close()
     if text == t:
-        text = True
+        react = True
     else:
-        text = False
-    return(text)
-
+        react = False
+    return(react)
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
-
-t = True
-f = False
 
 # When the bot is connected
 @client.event
