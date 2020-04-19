@@ -90,7 +90,6 @@ async def on_message(message):
         images = bs.find_all('img', {'src':re.compile('.png')})
         image = images[1]['src']
         image = image[2:]
-        print(image)
         await reply("send", message, "http://" + image)
 
 	# Deletes MelonMan's messages
