@@ -62,11 +62,10 @@ async def on_message(message):
     
 	# Message Reactions
     if read_line(0):
-        if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
-            await message.add_reaction("🌈")
-            await message.add_reaction("💕")
-            await message.add_reaction("😘")
-            print("Response: Added reactions")
+        if "john35588" in message.author.name or "Plasmathrower" in message.author.name:
+            await reply("react", message, "🌈")
+            await reply("react", message, "💕")
+            
         elif "MelonManTakeMeByTheHand" in message.author.name:
             await message.add_reaction("🤮")
             print("Response: Added reaction: 🤮")
