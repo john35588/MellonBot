@@ -25,7 +25,7 @@ def read_line(line_num):
     return(react)
 
 # Function to send messages/reactions
-async def send(ros, message, text):
+async def reply(ros, message, text):
     if ros == "react":
         await message.add_reaction(text)
         print("Response: Reaction: " + text)
@@ -77,7 +77,7 @@ async def on_message(message):
 	# Hey MelonBot response
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         response = "Hey " + message.author.name + "!"
-        send(send, message, response)
+        reply(send, message, response)
     
 	# Gets random dad joke
     if "$joke" in message.content.lower():
