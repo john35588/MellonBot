@@ -1,1 +1,4 @@
-var1 = "Hey!"
+true
+false
+false
+true
