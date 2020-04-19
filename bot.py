@@ -39,15 +39,15 @@ async def on_message(message):
 	
 	# Toggles reactions
     if "$react" in message.content.lower():
-        if read_line(1):
-            replace_line(1, "f\n")
+        if read_line(0):
+            replace_line(0, "f\n")
             print("Reactions Disabled")
         else:
-            replace_line(1, "t\n")
+            replace_line(0, "t\n")
             print("Reactions Enabled")
     
 	# Message Reactions
-    if read_line(1):
+    if read_line(0):
         if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
             await message.add_reaction("🌈")
             await message.add_reaction("💕")
