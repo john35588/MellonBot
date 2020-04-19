@@ -12,7 +12,7 @@ def replace_line(line_num, text):
     out.writelines(lines)
     out.close()
 
-# Function to read lines in the vars.txt file
+# Function to read lines in the vars.txt file. Returns contents of given line
 def read_line(line_num):
     lines = open("vars.txt", "r")
     text = lines.readlines()
