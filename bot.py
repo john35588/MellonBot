@@ -31,7 +31,7 @@ async def on_ready():
 # When a message is sent to any channel
 @client.event
 async def on_message(message):
-	vars = open(vars.txt, 'r')
+    vars = open(vars.txt, 'r')
 	
 	# Print: ....Channel.............Author.........Author Username..........Message.......
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
