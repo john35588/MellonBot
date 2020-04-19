@@ -16,9 +16,10 @@ def replace_line(line_num, text):
 
 
 def read_line(line_num):
-	variab = open(vars.txt, 'r').readline([line_num])
-	variab.close()
-	return(vars)
+    lines = open(vars.txt, 'r').readlines()
+    lines[line_num] = text
+    variab.close()
+    return(text)
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
