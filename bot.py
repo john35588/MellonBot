@@ -40,7 +40,7 @@ client = discord.Client()
 # When the bot is connected
 @client.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print("Logged on as {client.user}")
 
 # When a message is sent to any channel
 @client.event
