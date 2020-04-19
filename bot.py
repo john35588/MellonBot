@@ -6,7 +6,7 @@ import re # Compiles images from XKCD for later access
 
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
-    lines = open(vars.txt, 'r').readlines()
+    lines = open("vars.txt", "r").readlines()
     lines[line_num] = text
     out = open(vars.txt, 'w')
     out.writelines(lines)
@@ -16,7 +16,7 @@ def replace_line(line_num, text):
 
 
 def read_line(line_num):
-    lines = open(vars.txt, 'r').readlines()
+    lines = open("vars.txt", "r").readlines()
     lines[line_num] = text
     variab.close()
     return(text)
