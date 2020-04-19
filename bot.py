@@ -67,7 +67,5 @@ async def on_message(message):
 #async def on_message_delete(message):
 #    if "MelonBot" in message.author.name:
 #        await message.channel.send(message.content)
-    
-   
+
 client.run(token)
-vars.close()
