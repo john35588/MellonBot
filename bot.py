@@ -25,12 +25,12 @@ async def on_ready():
 async def on_message(message):
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
     if "$react" in message.content.lower():
-        if vars.readline(1):
+        if vars.readline([1]):
             replace_line(1, "f")
         else:
             replace_line(1, "t")
             
-    if vars.readline(1) or "Wally810" in message.author.name:
+    if vars.readline([1]) or "Wally810" in message.author.name:
         if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
             await message.add_reaction("🌈")
             await message.add_reaction("💕")
