@@ -12,6 +12,11 @@ def replace_line(line_num, text):
     out.writelines(lines)
     out.close()
 
+def read_line(line_num):
+	vars = open(vars.txt, 'r').readline([line_num])
+	vars.close()
+	return(vars)
+
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
 
@@ -26,19 +31,20 @@ async def on_ready():
 # When a message is sent to any channel
 @client.event
 async def on_message(message):
+	vars = open(vars.txt, 'r')
 	
 	# Print: ....Channel.............Author.........Author Username..........Message.......
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
 	
 	# Toggles reactions
     if "$react" in message.content.lower():
-        if vars.readline([1]):
+        if read_line(1):
             replace_line(1, "f")
         else:
             replace_line(1, "t")
     
 	# Message Reactions
-    if vars.readline([1]) or "Wally810" in message.author.name:
+    if read_line(1) or "Wally810" in message.author.name:
         if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
             await message.add_reaction("🌈")
             await message.add_reaction("💕")
