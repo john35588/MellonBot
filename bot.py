@@ -62,16 +62,14 @@ async def on_message(message):
     
 	# Message Reactions
     if read_line(0):
-        if "john35588" in message.author.name or "Plasmathrower" in message.author.name:
+        if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
             await reply("react", message, "🌈")
             await reply("react", message, "💕")
             
         elif "MelonManTakeMeByTheHand" in message.author.name:
-            await message.add_reaction("🤮")
-            print("Response: Added reaction: 🤮")
+            await reply("react", message, "🤮")
         else:
-            await message.add_reaction("🍉")
-            print("Response: Added reaction: 🍉")
+            await reply("react", message, "🍉")
 	
 	# Hey MelonBot response
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
@@ -82,7 +80,7 @@ async def on_message(message):
     if "$joke" in message.content.lower():
         dadjoke = Dadjoke()
         joke = dadjoke.joke
-        await message.channel.send(joke)
+        await reply("send", message, joke)
 	
 	# Gets XKCD comic
     if "$xkcd" in message.content.lower():
@@ -93,7 +91,7 @@ async def on_message(message):
         image = images[1]['src']
         image = image[2:]
         print(image)
-        await message.channel.send("http://" + image)
+        await reply("send", message, "http://" + image)
 
 	# Deletes MelonMan's messages
 #    if "MelonManTakeMeByTheHand" in message.author.name:
