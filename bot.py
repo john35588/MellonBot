@@ -78,7 +78,7 @@ async def on_message(message):
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         response = "Hey " + message.author.name + "!"
         await reply("send", message, response)
-    
+
 	# Gets random dad joke
     if "$joke" in message.content.lower():
         dadjoke = Dadjoke()
