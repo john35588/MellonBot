@@ -13,7 +13,7 @@ def replace_line(line_num, text):
     out.close()
 
 def read_line(line_num):
-    lines = open("vars.txt", "r").readlines()
+    lines = open("vars.txt", "r+").readlines()
     text = lines[line_num]
     lines.close()
     return(text)
