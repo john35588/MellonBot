@@ -42,9 +42,11 @@ async def on_message(message):
         if read_line(0):
             replace_line(0, "f")
             print("Reactions Disabled")
+            await message.channel.send("Reactions Disabled")
         else:
             replace_line(0, "t")
             print("Reactions Enabled")
+            await message.channel.send("Reactions Enabled")
     
 	# Message Reactions
     if read_line(0):
