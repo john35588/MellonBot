@@ -17,7 +17,7 @@ def replace_line(line_num, text):
 
 def read_line(line_num):
     lines = open("vars.txt", "r").readlines()
-    lines[line_num] = text
+    text = lines[line_num]
     variab.close()
     return(text)
 
