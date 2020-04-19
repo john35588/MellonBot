@@ -4,7 +4,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 
-from vars import var1
+from vars.py import var1
 
 print(var1)
 
