@@ -18,7 +18,7 @@ def replace_line(line_num, text):
 def read_line(line_num):
     lines = open("vars.txt", "r").readlines()
     text = lines[line_num]
-    variab.close()
+    lines.close()
     return(text)
 
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
