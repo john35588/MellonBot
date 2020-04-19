@@ -23,6 +23,18 @@ def read_line(line_num):
     else:
         react = False
     return(react)
+
+# Function to send messages/reactions
+def send(ros, text):
+    if ros = "react":
+        await message.add_reaction(text)
+        print("Response: Reaction: " + text)
+        
+    elif ros = "send":
+        await message.channel.send(text)
+        print("Response: " + text)
+        
+    
 token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
 
@@ -54,16 +66,18 @@ async def on_message(message):
             await message.add_reaction("🌈")
             await message.add_reaction("💕")
             await message.add_reaction("😘")
-            print("Response: Added reaction: 🌈")
+            print("Response: Added reactions")
         elif "MelonManTakeMeByTheHand" in message.author.name:
             await message.add_reaction("🤮")
+            print("Response: Added reaction: 🤮")
         else:
             await message.add_reaction("🍉")
             print("Response: Added reaction: 🍉")
 	
 	# Hey MelonBot response
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
-        await message.channel.send("Hey " + message.author.name + "!")
+        message = "Hey " + message.author.name + "!"
+        send("send", message)
     
 	# Gets random dad joke
     if "$joke" in message.content.lower():
