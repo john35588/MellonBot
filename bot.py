@@ -4,7 +4,9 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 
-from vars.py import var1
+vars = open("vars.txt", "r")
+for line in vars:
+	print(line)
 
 print(var1)
 
