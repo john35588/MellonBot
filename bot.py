@@ -3,6 +3,9 @@ from dadjokes import Dadjoke # Gets random Dad Jokes
 from urllib.request import urlopen # Used for getting XKCD images
 from bs4 import BeautifulSoup # also for getting XKCD images
 import re # Compiles images from XKCD for later access
+from boto.s3.connection import S3Connection
+
+s3 = S3Connection(os.environ['token'])
 
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
@@ -41,7 +44,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print("Logged on as {client.user}")
-
+    print(s3)
 # When a message is sent to any channel
 @client.event
 async def on_message(message):
