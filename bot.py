@@ -3,8 +3,7 @@ from dadjokes import Dadjoke # Gets random Dad Jokes
 from urllib.request import urlopen # Used for getting XKCD images
 from bs4 import BeautifulSoup # also for getting XKCD images
 import re # Compiles images from XKCD for later access
-from boto.s3.connection import S3Connection
-import os
+import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
 
@@ -37,8 +36,6 @@ async def reply(ros, message, text):
         await message.channel.send(text)
         print("Response: " + text)
         
-    
-token = "Njk5NjUwMDMwNDM2NjE0MTk0.XpZswg.I5UHOM-ItuF8nze07lzNbw2u0uo"
 client = discord.Client()
 
 # When the bot is connected
