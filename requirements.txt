@@ -1,4 +1,3 @@
 discord.py
 dadjokes
 bs4
-boto
