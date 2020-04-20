@@ -6,7 +6,7 @@ import re # Compiles images from XKCD for later access
 from boto.s3.connection import S3Connection
 import os
 
-token = os.environ.get(token)
+token = os.environ.get('token')
 
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
