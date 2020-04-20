@@ -4,6 +4,7 @@ from urllib.request import urlopen # Used for getting XKCD images
 from bs4 import BeautifulSoup # also for getting XKCD images
 import re # Compiles images from XKCD for later access
 from boto.s3.connection import S3Connection
+import os
 
 s3 = S3Connection(os.environ['token'])
 
