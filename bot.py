@@ -1,4 +1,5 @@
 import discord # Connects bot to discord
+from discord.ext import commands # Makes use of multi variable commands easier
 from dadjokes import Dadjoke # Gets random Dad Jokes
 from urllib.request import urlopen # Used for getting XKCD images
 from bs4 import BeautifulSoup # also for getting XKCD images
