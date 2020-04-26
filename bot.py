@@ -58,7 +58,7 @@ async def on_ready():
     print("Token recieved")
     
 # When a message is sent to any channel
-@client.event
+@bot.event
 async def on_message(message):
 	# Print: ....Channel.............Author.........Author Username..........Message.......
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
@@ -124,7 +124,7 @@ async def on_message(message):
 #        await message.delete()
 
 # Makes bot's messages undeletable
-#@client.event
+#@bot.event
 #async def on_message_delete(message):
 #    if "MelonBot" in message.author.name:
 #        await message.channel.send(message.content)
