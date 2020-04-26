@@ -93,7 +93,7 @@ async def on_message(message):
         await reply("send", message, "http://" + image)
     
     if "$slap" in message.content.lower():
-        await reply("send", message, "MelonBot slaps " + message.mentions[0].mention)
+        await reply("send", message, "MelonBot slaps " + message.mentions[0].id)
         
 	# Sends link to list of commands
     if "$help" in message.content.lower():
