@@ -10,11 +10,12 @@ token = os.environ.get('token')
 
 client = commands.Bot(command_prefix="$")
 
-@client.command()
+@client.command
 async def clear(ctx, amount = 25):
     channel = ctx.message.channel
     messages = []
     print("clear command")
+
     async for message in client.logs_from(channel, limit=int(amount) + 1):
         if not message.attachments:
             messages.append(message)
