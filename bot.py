@@ -8,9 +8,9 @@ import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
 
-client = commands.Bot(command_prefix="$")
+bot = commands.Bot(command_prefix="$")
 
-@client.command
+@client.command()
 async def clear(ctx, amount = 25):
     channel = ctx.message.channel
     messages = []
@@ -130,4 +130,4 @@ async def on_message(message):
 #        await message.channel.send(message.content)
 
 # Checks token authenticity with discord
-client.run(token)
+bot.run(token)
