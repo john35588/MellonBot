@@ -8,9 +8,9 @@ import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
 
-client = commands.Bot(command_prefix = '$')
+client = commands.Bot(command_prefix="$")
 
-@client.command(pass_context=True)
+@client.command()
 async def clear(ctx, amount = 25):
     channel = ctx.message.channel
     messages = []
