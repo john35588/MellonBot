@@ -8,7 +8,7 @@ import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
 
-client = commands.Bot(command_prefix = '.')
+client = commands.Bot(command_prefix = '$')
 
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
