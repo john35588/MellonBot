@@ -10,6 +10,17 @@ token = os.environ.get('token')
 
 client = commands.Bot(command_prefix = '$')
 
+@client.command(pass_context=True)
+async def clear(ctx, amount = 25):
+    channel = ctx.message.channel
+    messages = []
+    print("clear command")
+    async for message in client.logs_from(channel, limit=int(amount) + 1):
+        if not message.attachments:
+            messages.append(message)
+    await client.delete_messages(messages)
+
+
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
     lines = open("vars.txt", "r").readlines()
@@ -103,15 +114,7 @@ async def on_message(message):
     if "$help" in message.content.lower():
         await reply("send", message, "https://docs.google.com/spreadsheets/d/1zOGoIlvEVDKHbX_6CTbjViChMRyQbHEGv74-gVvNUXM/edit?usp=sharing")
     
-@client.command(pass_context=True)
-async def clear(ctx, amount = 25):
-    channel = ctx.message.channel
-    messages = []
-    print("clear command")
-    async for message in client.logs_from(channel, limit=int(amount) + 1):
-        if not message.attachments:
-            messages.append(message)
-    await client.delete_messages(messages)
+
     
                 
         
