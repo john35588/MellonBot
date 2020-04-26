@@ -10,7 +10,7 @@ token = os.environ.get('token')
 
 bot = commands.Bot(command_prefix="$")
 
-@client.command()
+@bot.command()
 async def clear(ctx, amount = 25):
     channel = ctx.message.channel
     messages = []
@@ -52,7 +52,7 @@ async def reply(ros, message, text):
         print("Response: " + text)
 
 # When the bot is connected
-@client.event
+@bot.event
 async def on_ready():
     print("Logged on as {client.user}")
     print("Token recieved")
