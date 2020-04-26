@@ -91,6 +91,9 @@ async def on_message(message):
         image = images[1]['src']
         image = image[2:]
         await reply("send", message, "http://" + image)
+    
+    if "$slap" in message.content.lower():
+        await reply("send", message, "MelonBot slaps " + message.mentions)
         
 	# Sends link to list of commands
     if "$help" in message.content.lower():
