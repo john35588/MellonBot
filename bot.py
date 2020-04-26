@@ -42,7 +42,7 @@ client = discord.Client()
 @client.event
 async def on_ready():
     print("Logged on as {client.user}")
-    print(token)
+    print("Token recieved")
     
 # When a message is sent to any channel
 @client.event
@@ -93,7 +93,7 @@ async def on_message(message):
         await reply("send", message, "http://" + image)
     
     if "$slap" in message.content.lower():
-        await reply("send", message, "MelonBot slaps " + message.mentions)
+        await reply("send", message, "MelonBot slaps " + message.mentions[0])
         
 	# Sends link to list of commands
     if "$help" in message.content.lower():
