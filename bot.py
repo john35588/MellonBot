@@ -107,6 +107,7 @@ async def on_message(message):
 async def clear(ctx, amount = 25):
     channel = ctx.message.channel
     messages = []
+    print("clear command")
     async for message in client.logs_from(channel, limit=int(amount) + 1):
         if not message.attachments:
             messages.append(message)
