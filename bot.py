@@ -22,7 +22,8 @@ async def clear(ctx, amount = 5):
             messages.append(message)
     x = len(messages)
     await channel.delete_messages(messages)
-    await reply("send", ctx.message, str(x) + " messages removed.")
+    repl = str(x) + " messages removed."
+    await reply("send", ctx.message, repl)
 
 @client.command(pass_context = True)
 async def xkcd(ctx, request = "130"):
