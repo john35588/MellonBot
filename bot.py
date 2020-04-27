@@ -15,15 +15,11 @@ client = commands.Bot(command_prefix = '$')
 async def clear(ctx, amount = 5):
     channel = ctx.message.channel
     messages = []
-    print("clear command")
-
     async for message in channel.history(limit=int(amount) + 1):
-        print(message.attachments)
         if len(message.attachments) > 0 or "http" in message.content:
             print("keep")
         else:
             messages.append(message)
-	
     await channel.delete_messages(messages)
 
 @client.command(pass_context = True)
