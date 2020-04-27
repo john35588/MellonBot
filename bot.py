@@ -19,7 +19,7 @@ async def clear(ctx, amount = 5):
 
     async for message in channel.history(limit=int(amount) + 1):
         print(message.attachments)
-        if len(message.attachments) <= 0:
+        if len(message.attachments) <= 0 or "http" in message.content:
             messages.append(message)
 	
     await channel.delete_messages(messages)
