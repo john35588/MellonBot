@@ -18,7 +18,8 @@ async def clear(ctx, amount = 5):
     print("clear command")
 
     async for message in channel.history(limit=int(amount) + 1):
-        if message.attachments.size <= 0:
+        print(message.attachments)
+        if not message.attachments:
             messages.append(message)
 	
     await channel.delete_messages(messages)
