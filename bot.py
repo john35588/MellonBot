@@ -54,13 +54,13 @@ async def reply(ros, message, text):
 # When the bot is connected
 @client.event
 async def on_ready():
-    print("Logged on as {bot.user}")
+    print("Logged on as {client.user}")
     print("Token recieved")
     
 # When a message is sent to any channel
 @client.command()
 async def on_message(message):
-    await bot.process_commands(message)
+    await client.process_commands(message)
 	# Print: ....Channel.............Author.........Author Username..........Message.......
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
 	
