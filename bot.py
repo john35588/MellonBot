@@ -19,7 +19,7 @@ async def clear(ctx, amount = 25):
     async for message in channel.history(limit=int(amount) + 1):
         if not message.attachments:
             messages.append(message)
-    await client.delete_messages(messages)
+    await delete_messages(messages)
 
 
 # Function to replace lines in the vars.txt file
