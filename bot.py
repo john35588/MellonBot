@@ -8,15 +8,15 @@ import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
 
-bot = commands.Bot(command_prefix='$')
+client = commands.Bot(command_prefix = '$')
 
-@bot.command()
+@client.command(pass_context = True)
 async def clear(ctx, amount = 25):
     channel = ctx.message.channel
     messages = []
     print("clear command")
 
-    async for message in bot.logs_from(channel, limit=int(amount) + 1):
+    async for message in client.logs_from(channel, limit=int(amount) + 1):
         if not message.attachments:
             messages.append(message)
     await client.delete_messages(messages)
@@ -52,13 +52,13 @@ async def reply(ros, message, text):
         print("Response: " + text)
 
 # When the bot is connected
-@bot.event
+@client.event
 async def on_ready():
     print("Logged on as {bot.user}")
     print("Token recieved")
     
 # When a message is sent to any channel
-@bot.command()
+@client.command()
 async def on_message(message):
     await bot.process_commands(message)
 	# Print: ....Channel.............Author.........Author Username..........Message.......
@@ -125,10 +125,10 @@ async def on_message(message):
 #        await message.delete()
 
 # Makes bot's messages undeletable
-#@bot.event
+#@client.event
 #async def on_message_delete(message):
 #    if "MelonBot" in message.author.name:
 #        await message.channel.send(message.content)
 
 # Checks token authenticity with discord
-bot.run(token)
+client.run(token)
