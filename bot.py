@@ -8,7 +8,7 @@ import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
 
-bot = commands.Bot(command_prefix="$")
+bot = commands.Bot(command_prefix='$')
 
 @bot.command()
 async def clear(ctx, amount = 25):
@@ -54,12 +54,13 @@ async def reply(ros, message, text):
 # When the bot is connected
 @bot.event
 async def on_ready():
-    print("Logged on as {client.user}")
+    print("Logged on as {bot.user}")
     print("Token recieved")
     
 # When a message is sent to any channel
-@bot.event
+@bot.command()
 async def on_message(message):
+    await bot.process_commands(message)
 	# Print: ....Channel.............Author.........Author Username..........Message.......
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
 	
