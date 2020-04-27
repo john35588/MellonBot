@@ -22,7 +22,7 @@ async def clear(ctx, amount = 25):
             messages.append(message)
     await channel.delete_messages(messages)
 
-@client.commands(pass_context = True)
+@client.command(pass_context = True)
 async def xkcd(ctx, request = 130):
     html = urlopen('https://xkcd.com/' + request + '/')
     bs = BeautifulSoup(html, 'html.parser')
