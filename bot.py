@@ -13,17 +13,20 @@ client = commands.Bot(command_prefix = '$')
 
 @client.command(pass_context = True)
 async def clear(ctx, amount = 5):
-    channel = ctx.message.channel
-    messages = []
-    async for message in channel.history(limit=int(amount) + 1):
-        if len(message.attachments) > 0 or "http" in message.content:
-            print("keep")
-        else:
-            messages.append(message)
-    x = len(messages)
-    await channel.delete_messages(messages)
-    repl = str(x) + " messages removed."
-    await reply("send", ctx.message, repl)
+    if ctx.message.author.server_permissions.administrator:
+        channel = ctx.message.channel
+        messages = []
+        async for message in channel.history(limit=int(amount) + 1):
+            if len(message.attachments) > 0 or "http" in message.content:
+                print("keep")
+            else:
+                messages.append(message)
+        x = len(messages)
+        await channel.delete_messages(messages)
+        repl = str(x) + " messages removed."
+        await reply("send", ctx.message, repl)
+    else:
+        await reply("send", ctx.message, "You do not have the required permissions to run this command.")
 
 @client.command(pass_context = True)
 async def xkcd(ctx, request = "130"):
