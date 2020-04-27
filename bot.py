@@ -23,7 +23,7 @@ async def clear(ctx, amount = 25):
     await channel.delete_messages(messages)
 
 @client.command(pass_context = True)
-async def xkcd(ctx, request = 130):
+async def xkcd(ctx, request = "130"):
     html = urlopen('https://xkcd.com/' + request + '/')
     bs = BeautifulSoup(html, 'html.parser')
     images = bs.find_all('img', {'src':re.compile('.png')})
