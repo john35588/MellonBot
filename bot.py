@@ -11,6 +11,7 @@ token = os.environ.get('token')
 Client = discord.Client() 
 client = commands.Bot(command_prefix = '$')
 
+# Command to clear all messages not containing an image.
 @client.command(pass_context = True)
 async def clear(ctx, amount = 5):
     if "Wally810" in ctx.message.author.name or "john35588" in ctx.message.author.name:
@@ -28,6 +29,7 @@ async def clear(ctx, amount = 5):
     else:
         await reply("send", ctx.message, "You do not have the required permissions to run this command.")
 
+# Command to get a specified xkcd comic.
 @client.command(pass_context = True)
 async def xkcd(ctx, request = "130"):
     html = urlopen('https://xkcd.com/' + request + '/')
@@ -37,12 +39,20 @@ async def xkcd(ctx, request = "130"):
     image = image[2:]
     await reply("send", ctx.message, "http://" + image)
 
+# Command to get a joke.
 @client.command()
 async def joke(ctx):
     dadjoke = Dadjoke()
     joke = dadjoke.joke
     await reply("send", ctx.message, joke)
-    
+
+@client.command()
+async def slap(ctx):
+    if "@everyone" in ctx.message.content.lower():
+        await reply("send", message, "MelonBot slaps @everyone")
+    else:
+        await reply("send", message, "MelonBot slaps " + message.mentions[0].mention)
+
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
     lines = open("vars.txt", "r").readlines()
