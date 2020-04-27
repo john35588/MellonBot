@@ -29,7 +29,7 @@ async def xkcd(ctx, request = "130"):
     images = bs.find_all('img', {'src':re.compile('.png')})
     image = images[1]['src']
     image = image[2:]
-    await reply("send", message, "http://" + image)
+    await reply("send", ctx.message, "http://" + image)
     
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
@@ -63,7 +63,7 @@ async def reply(ros, message, text):
 # When the bot is connected
 @client.event
 async def on_ready():
-    print("Logged on as {client.user}")
+    print("Logged on as {Client.user}")
     print("Token recieved")
     
 # When a message is sent to any channel
