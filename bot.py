@@ -12,14 +12,15 @@ Client = discord.Client()
 client = commands.Bot(command_prefix = '$')
 
 @client.command(pass_context = True)
-async def clear(ctx, amount = 25):
+async def clear(ctx, amount = 5):
     channel = ctx.message.channel
     messages = []
     print("clear command")
 
     async for message in channel.history(limit=int(amount) + 1):
-        if not message.attachments:
+        if message.attachments.size <= 0:
             messages.append(message)
+	
     await channel.delete_messages(messages)
 
 @client.command(pass_context = True)
