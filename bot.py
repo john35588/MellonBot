@@ -13,7 +13,7 @@ client = commands.Bot(command_prefix = '$')
 
 @client.command(pass_context = True)
 async def clear(ctx, amount = 5):
-    if ctx.message.author.name == Wally810 or ctx.message.author.name == john35588:
+    if "Wally810" in ctx.message.author.name or "john35588" in ctx.message.author.name:
         channel = ctx.message.channel
         messages = []
         async for message in channel.history(limit=int(amount) + 1):
