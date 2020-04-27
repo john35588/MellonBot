@@ -22,7 +22,15 @@ async def clear(ctx, amount = 25):
             messages.append(message)
     await channel.delete_messages(messages)
 
-
+@client.commands(pass_context = True)
+async def xkcd(ctx, request = 130):
+    html = urlopen('https://xkcd.com/' + request + '/')
+    bs = BeautifulSoup(html, 'html.parser')
+    images = bs.find_all('img', {'src':re.compile('.png')})
+    image = images[1]['src']
+    image = image[2:]
+    await reply("send", message, "http://" + image)
+    
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
     lines = open("vars.txt", "r").readlines()
