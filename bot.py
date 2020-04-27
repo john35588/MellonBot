@@ -8,6 +8,7 @@ import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
 
+Client = discord.Client() 
 client = commands.Bot(command_prefix = '$')
 
 @client.command(pass_context = True)
@@ -19,7 +20,7 @@ async def clear(ctx, amount = 25):
     async for message in channel.history(limit=int(amount) + 1):
         if not message.attachments:
             messages.append(message)
-    await delete_messages(messages)
+    await Client.delete_messages(messages)
 
 
 # Function to replace lines in the vars.txt file
