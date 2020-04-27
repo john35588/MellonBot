@@ -36,6 +36,12 @@ async def xkcd(ctx, request = "130"):
     image = images[1]['src']
     image = image[2:]
     await reply("send", ctx.message, "http://" + image)
+
+@client.command()
+async def joke(ctx):
+    dadjoke = Dadjoke()
+    joke = dadjoke.joke
+    await reply("send", ctx.message, joke)
     
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
@@ -104,22 +110,6 @@ async def on_message(message):
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         response = "Hey " + message.author.name + "!"
         await reply("send", message, response)
-
-	# Gets random dad joke
-    if "$joke" in message.content.lower():
-        dadjoke = Dadjoke()
-        joke = dadjoke.joke
-        await reply("send", message, joke)
-	
-	# Gets XKCD comic
-    if "$xkcd" in message.content.lower():
-        request = message.content[6:]
-        html = urlopen('https://xkcd.com/' + request + '/')
-        bs = BeautifulSoup(html, 'html.parser')
-        images = bs.find_all('img', {'src':re.compile('.png')})
-        image = images[1]['src']
-        image = image[2:]
-        await reply("send", message, "http://" + image)
     
     if "$slap" in message.content.lower():
         if "@everyone" in message.content.lower():
