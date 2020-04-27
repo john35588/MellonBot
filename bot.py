@@ -49,9 +49,9 @@ async def joke(ctx):
 @client.command()
 async def slap(ctx):
     if "@everyone" in ctx.message.content.lower():
-        await reply("send", message, "MelonBot slaps @everyone")
+        await reply("send", ctx.message, "MelonBot slaps @everyone")
     else:
-        await reply("send", message, "MelonBot slaps " + message.mentions[0].mention)
+        await reply("send", ctx.message, "MelonBot slaps " + ctx.message.mentions[0].mention)
 
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
