@@ -16,7 +16,7 @@ async def clear(ctx, amount = 25):
     messages = []
     print("clear command")
 
-    async for message in client.logs_from(channel, limit=int(amount) + 1):
+    async for message in channel.history(channel, limit=int(amount) + 1):
         if not message.attachments:
             messages.append(message)
     await client.delete_messages(messages)
