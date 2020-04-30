@@ -58,10 +58,6 @@ async def slap(ctx):
         await reply("send", ctx.message, "MelonBot slaps " + ctx.message.mentions[0].mention)
 
 @client.command()
-async def help(ctx):
-    await reply("send", message, "https://docs.google.com/spreadsheets/d/1zOGoIlvEVDKHbX_6CTbjViChMRyQbHEGv74-gVvNUXM/edit?usp=sharing")
-
-@client.command()
 async def react(ctx):
     if read_line(0):
         replace_line(0, "f")
