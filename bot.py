@@ -71,8 +71,8 @@ async def react(ctx):
         replace_line(0, "t")
         print("Reactions Enabled")
         await message.channel.send("Reactions Enabled")
-        
-        
+
+
 #--------Functions---------        
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
