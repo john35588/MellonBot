@@ -7,10 +7,14 @@ import re # Compiles images from XKCD for later access
 import os # Accesses config vars from Heroku
 
 token = os.environ.get('token')
-
-Client = discord.Client() 
 client = commands.Bot(command_prefix = '$')
 
+# When the bot is connected
+@client.event
+async def on_ready():
+    print("Logged on as MelonBot")
+    
+#---------Commands---------
 # Command to clear all messages not containing an image.
 @client.command(pass_context = True)
 async def clear(ctx, amount = 5):
@@ -53,6 +57,23 @@ async def slap(ctx):
     else:
         await reply("send", ctx.message, "MelonBot slaps " + ctx.message.mentions[0].mention)
 
+@client.command()
+async def help(ctx):
+    await reply("send", message, "https://docs.google.com/spreadsheets/d/1zOGoIlvEVDKHbX_6CTbjViChMRyQbHEGv74-gVvNUXM/edit?usp=sharing")
+
+@client.command()
+async def react(ctx):
+    if read_line(0):
+        replace_line(0, "f")
+        print("Reactions Disabled")
+        await message.channel.send("Reactions Disabled")
+    else:
+        replace_line(0, "t")
+        print("Reactions Enabled")
+        await message.channel.send("Reactions Enabled")
+        
+        
+#--------Functions---------        
 # Function to replace lines in the vars.txt file
 def replace_line(line_num, text):
     lines = open("vars.txt", "r").readlines()
@@ -82,30 +103,15 @@ async def reply(ros, message, text):
         await message.channel.send(text)
         print("Response: " + text)
 
-# When the bot is connected
-@client.event
-async def on_ready():
-    print("Logged on as {Client.user}")
-    print("Token recieved")
-    
+
+#--------Non Command Functions----------
 # When a message is sent to any channel
 @client.command()
 async def on_message(message):
     await client.process_commands(message)
 	# Print: ....Channel.............Author.........Author Username..........Message.......
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
-	
-	# Toggles reactions
-    if "$react" in message.content.lower():
-        if read_line(0):
-            replace_line(0, "f")
-            print("Reactions Disabled")
-            await message.channel.send("Reactions Disabled")
-        else:
-            replace_line(0, "t")
-            print("Reactions Enabled")
-            await message.channel.send("Reactions Enabled")
-    
+
 	# Message Reactions
     if read_line(0):
         if "22jhoff" in message.author.name or "Plasmathrower" in message.author.name:
@@ -120,20 +126,6 @@ async def on_message(message):
     if "hey melonbot" in message.content.lower() or "hi melonbot" in message.content.lower():
         response = "Hey " + message.author.name + "!"
         await reply("send", message, response)
-    
-    if "$slap" in message.content.lower():
-        if "@everyone" in message.content.lower():
-            await reply("send", message, "MelonBot slaps @everyone")
-        else:
-            await reply("send", message, "MelonBot slaps " + message.mentions[0].mention)
-        
-	# Sends link to list of commands
-    if "$help" in message.content.lower():
-        await reply("send", message, "https://docs.google.com/spreadsheets/d/1zOGoIlvEVDKHbX_6CTbjViChMRyQbHEGv74-gVvNUXM/edit?usp=sharing")
-    
-
-    
-                
         
 	# Deletes MelonMan's messages
 #    if "MelonManTakeMeByTheHand" in message.author.name:
