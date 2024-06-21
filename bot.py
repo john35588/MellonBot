@@ -12,13 +12,13 @@ intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='$',intents=intents) 
 
 # When the bot is connected
-@client.event
+@bot.event
 async def on_ready():
     print("Logged on as MelonBot")
     
 #---------Commands---------
 # Command to clear all messages not containing an image.
-@client.command(pass_context = True)
+@bot.command(pass_context = True)
 async def clear(ctx, amount = 5):
     if "Wally810" in ctx.message.author.name or "john35588" in ctx.message.author.name:
         channel = ctx.message.channel
@@ -36,7 +36,7 @@ async def clear(ctx, amount = 5):
         await reply("send", ctx.message, "You do not have the required permissions to run this command.")
 
 # Command to get a specified xkcd comic.
-@client.command(pass_context = True)
+@bot.command(pass_context = True)
 async def xkcd(ctx, request = "130"):
     html = urlopen('https://xkcd.com/' + request + '/')
     bs = BeautifulSoup(html, 'html.parser')
@@ -46,20 +46,20 @@ async def xkcd(ctx, request = "130"):
     await reply("send", ctx.message, "http://" + image)
 
 # Command to get a joke.
-@client.command()
+@bot.command()
 async def joke(ctx):
     dadjoke = Dadjoke()
     joke = dadjoke.joke
     await reply("send", ctx.message, joke)
 
-@client.command()
+@bot.command()
 async def slap(ctx):
     if "@everyone" in ctx.message.content.lower():
         await reply("send", ctx.message, "MelonBot slaps @everyone")
     else:
         await reply("send", ctx.message, "MelonBot slaps " + ctx.message.mentions[0].mention)
 
-@client.command()
+@bot.command()
 async def react(ctx):
     if read_line(0):
         replace_line(0, "f")
@@ -104,9 +104,9 @@ async def reply(ros, message, text):
 
 #--------Non Command Functions----------
 # When a message is sent to any channel
-@client.command()
+@bot.command()
 async def on_message(message):
-    await client.process_commands(message)
+    await bot.process_commands(message)
 	# Print: ....Channel.............Author.........Author Username..........Message.......
     print(f"{message.channel}: {message.author}: {message.author.name}: {message.content}")
 
@@ -130,10 +130,10 @@ async def on_message(message):
 #        await message.delete()
 
 # Makes bot's messages undeletable
-#@client.event
+#@bot.event
 #async def on_message_delete(message):
 #    if "MelonBot" in message.author.name:
 #        await message.channel.send(message.content)
 
 # Checks token authenticity with discord
-client.run(token)
+bot.run(token)
