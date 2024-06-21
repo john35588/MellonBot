@@ -6,10 +6,11 @@ from bs4 import BeautifulSoup # also for getting XKCD images
 import re # Compiles images from XKCD for later access
 import os # Accesses config vars from Heroku
 
+token = os.environ.get('token')
+
 intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='.',intents=intents) 
 
-token = os.environ.get('token')
 client = commands.Bot(command_prefix = '$')
 
 # When the bot is connected
