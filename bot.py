@@ -9,9 +9,7 @@ import os # Accesses config vars from Heroku
 token = os.environ.get('token')
 
 intents = discord.Intents.all()
-bot = commands.Bot(command_prefix='.',intents=intents) 
-
-client = commands.Bot(command_prefix = '$')
+bot = commands.Bot(command_prefix='$',intents=intents) 
 
 # When the bot is connected
 @client.event
